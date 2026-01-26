@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aprendiendo jQuery - Alejandro Becerra</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <style>
+    .card-body{
+      overflow-y: scroll;
+      height: 300px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container my-5">
+
+    <h2 class="display-5 font-weight-bold my-3">AJAX con jQuery (GET y POST) - Alejandro Becerra</h2>
+    <hr>
+
+    <div class="row">
+      <!-- ===================== CARD GET ===================== -->
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-header">
+            Método GET (listar usuarios)
+          </div>
+
+          <div class="card-body" id="loadAjak">
+            <!-- Aquí se cargan usuarios con GET -->
+          </div>
+
+          <div class="card-footer text-right">
+            <button class="btn btn-outline-primary btn-sm" id="btnCargarUsuarios">
+              Cargar usuarios
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================== FORM POST ===================== -->
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-header">
+            Método POST (enviar datos)
+          </div>
+
+          <div class="card-body">
+            <!-- Mensajes (éxito / error / cargando) -->
+            <div id="msg" class="alert d-none" role="alert"></div>
+
+            <!-- OJO: action apunta a una API que permite POST sin CORS -->
+            <form id="envioDatos" action="https://jsonplaceholder.typicode.com/posts" method="POST">
+              <div class="form-group">
+                <label for="name">Nombre</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  placeholder="Ingrese el nombre"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="web">Sitio web</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">@</span>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="web"
+                    name="web"
+                    placeholder="Ingrese la URL"
+                    required
+                  />
+                </div>
+                <small class="form-text text-muted">
+                  Ejemplo: https://misitio.com
+                </small>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="btnEnviar">
+                Enviar
+              </button>
+            </form>
+          </div>
+
+          <div class="card-footer">
+            <small class="text-muted">
+              Nota: JSONPlaceholder simula la creación y devuelve una respuesta.
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/07-ajak-metodo-post-jquery.js"></script>
+
+</body>
+</html>

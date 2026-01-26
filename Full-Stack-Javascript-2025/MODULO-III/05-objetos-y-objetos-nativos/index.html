@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Objetos + Objetos Nativos (Math/String) — Pack Docente</title>
+
+  <!-- Bootstrap (solo para orden visual) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous"
+  >
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <header class="container py-4">
+    <div class="d-flex flex-column gap-2">
+      <h1 class="h3 m-0">Objetos + Objetos Nativos (Math / String) — AE3.5</h1>
+      <p class="m-0 text-secondary">
+        Demo entretenida: <strong>“Mini Tienda: Perfil + Cupón + Ticket”</strong>.
+        Abre la consola (F12) y también mira la salida en pantalla.
+      </p>
+    </div>
+  </header>
+
+  <main class="container pb-4">
+    <div class="row g-3">
+      <!-- Panel -->
+      <section class="col-12 col-lg-5">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h2 class="h5">Panel de la demo (docente)</h2>
+            <p class="text-secondary small mb-3">
+              Consejo: ejecuta <strong>paso a paso</strong> para explicar cada concepto.
+            </p>
+
+            <div class="mb-3">
+              <label class="form-label">Nombre (prueba con acentos y espacios)</label>
+              <input class="form-control" id="inp-nombre" value="  José  " />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Apellido (prueba con acentos)</label>
+              <input class="form-control" id="inp-apellido" value="  Pérez  " />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Texto de precio (lo convertimos a número con String.match)</label>
+              <input class="form-control" id="inp-precio" value="$12.990" />
+              <div class="form-text">Ej: "$12.990" o "Precio: 4990 CLP"</div>
+            </div>
+
+            <div class="d-grid gap-2">
+              <button class="btn btn-dark" id="btn-limpiar">Limpiar salida</button>
+
+              <hr class="my-2" />
+
+              <button class="btn btn-outline-primary" id="btn-demo-1">
+                1) Crear objeto usuario (propiedades + método)
+              </button>
+
+              <button class="btn btn-outline-primary" id="btn-demo-2">
+                2) Notación punto vs corchetes (clave dinámica)
+              </button>
+
+              <button class="btn btn-outline-primary" id="btn-demo-3">
+                3) Modificar / agregar / eliminar propiedades (delete)
+              </button>
+
+              <button class="btn btn-outline-primary" id="btn-demo-4">
+                4) Math: aleatorios + redondeos
+              </button>
+
+              <button class="btn btn-outline-primary" id="btn-demo-5">
+                5) String: limpiar texto + quitar acentos
+              </button>
+
+              <button class="btn btn-outline-primary" id="btn-demo-6">
+                6) String.match: extraer número desde texto de precio
+              </button>
+
+              <button class="btn btn-success" id="btn-demo-final">
+                ✅ DEMO COMPLETA: generar ticket de compra
+              </button>
+            </div>
+
+            <div class="alert alert-info mt-3 mb-0 small">
+              <strong>Ejercicio para estudiantes:</strong>
+              <code>assets/js/ejercicios/01-desafio-mini-tienda.alumno.js</code>
+              (incluye solución).
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Output -->
+      <section class="col-12 col-lg-7">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between">
+              <h2 class="h5 m-0">Salida en pantalla</h2>
+              <span class="badge text-bg-secondary">#output</span>
+            </div>
+            <p class="text-secondary small mt-2">
+              Útil para estudiantes que aún no dominan la consola.
+            </p>
+            <pre id="output" class="output" aria-live="polite">
+              
+            </pre>
+            <p class="text-secondary small mb-0">
+              Si no ves nada, presiona un botón del panel.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="mt-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h2 class="h5">Checklist rápido (lo que debe quedar claro)</h2>
+          <ul class="m-0">
+            <li>Un <strong>objeto</strong> agrupa <strong>propiedades</strong> (datos) y <strong>métodos</strong> (funciones).</li>
+            <li><strong>Punto</strong>: <code>obj.prop</code> cuando la clave es simple. <strong>Corchetes</strong>: <code>obj["prop"]</code> cuando hay espacios o la clave viene en variable.</li>
+            <li>Podemos <strong>agregar</strong>, <strong>modificar</strong> y <strong>eliminar</strong> propiedades con <code>delete</code>.</li>
+            <li><strong>Math</strong> ayuda con aleatorios y redondeos (random / floor / round / ceil).</li>
+            <li><strong>String</strong> ayuda a limpiar texto: <code>trim</code>, <code>toLowerCase</code>, <code>replace</code>, <code>normalize</code>.</li>
+            <li><code>match</code> + expresiones regulares permite <strong>extraer números</strong> desde texto.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container pb-4">
+    <p class="text-secondary small m-0">
+      Pack Docente — Objetos + Objetos Nativos (Math/String). Edita libremente para tu clase.
+    </p>
+  </footer>
+
+  <script src="assets/js/app.demo.js"></script>
+</body>
+</html>

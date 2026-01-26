@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Aprendiendo Jquery - Alejandro Becerra</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	
+	<style>
+		#caja{
+			width: 100%;
+			height: 60px;
+			background:coral;
+			border:1px solid brown;
+			display: block;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: all 0.3s ease-in-out;
+		}
+		.alert-secondary{
+			display: none;
+		}
+
+		.circle{
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			background: yellow;
+			border-radius:100%;
+			border:1px solid coral;
+			top: 0;
+			left: 0;
+			z-index: 999;
+		}
+
+	</style>
+
+
+</head>
+<body>
+
+	<div class="container my-5">
+
+	   <h1 class="display-5 font-weight-bold">Eventos Jquery - Alejandro Becerra</h1>
+	   <hr class="py-2">
+
+	   <div id="caja" class="my-3">
+	   		Soy una caja
+	   </div>
+
+	   <h3 class="display-5 font-weight-bold">Evento Focus y Blur</h3>
+	   
+	   <hr class="py-2">
+		
+		<form class="form-inline mb-4">
+		<label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+		<div class="input-group w-100">
+		<div class="input-group-prepend">
+		<div class="input-group-text">@</div>
+		</div>
+		<input type="text" class="form-control col-md-12" id="nombre" placeholder="Username">
+		</div>
+		</form>
+
+		<div class="alert alert-secondary" role="alert">
+  			A simple secondary alert—check it out!
+		</div>
+
+		<div class="circle">
+			
+		</div>
+
+	   
+	</div>
+
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/03-eventos-jquery.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01 Demo — SOLO HTML (para seguir la clase)</title>
+
+    <!-- ✅ PASO 1: Pega el CSS CDN de Bootstrap aquí -->
+    <!-- TODO: <link rel="stylesheet" href="...bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+    <!-- ✅ PASO 2 (opcional): si tu profe crea un styles.css, se coloca después -->
+     <link rel="stylesheet" href="assets/css/main.css">
+  </head>
+
+  <body>
+ <!-- =========================
+      NAVBAR (Barra de navegación)
+      =========================
+      - navbar-expand-lg: se EXPANDE en pantallas grandes (lg) y se COLAPSA en mobile.
+      - bg-light: fondo claro
+      - sticky-top: queda “pegada” arriba al hacer scroll (útil para navegación).
+      - Los atributos data-bs-* activan comportamientos JavaScript de Bootstrap.
+    -->
+    <nav class="navbar navbar-expand-lg bg-light border-bottom sticky-top">
+      <div class="container">
+        <!-- navbar-brand: marca/logo -->
+        <a class="navbar-brand fw-bold" href="#inicio">Bootcamp + Bootstrap</a>
+
+        <!-- Botón hamburguesa:
+          - Se muestra cuando el menú está colapsado (mobile).
+          - data-bs-target apunta al id del div colapsable.
+        -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+          aria-controls="menu"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- collapse navbar-collapse:
+          - “collapse” = se oculta/muestra en mobile.
+          - “navbar-collapse” = estilos propios del navbar.
+        -->
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <!-- nav-item + nav-link: estilos del menú -->
+            <li class="nav-item"><a class="nav-link" href="#intro">Intro</a></li>
+            <li class="nav-item"><a class="nav-link" href="#grid">Grilla</a></li>
+            <li class="nav-item"><a class="nav-link" href="#tabla">Tabla</a></li>
+            <li class="nav-item"><a class="nav-link" href="#form">Formulario</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- =========================
+      HERO / INTRO (con container)
+      =========================
+      - container: ancho máximo + centrado (ideal para contenido).
+      - py-5: padding vertical (arriba/abajo) → 5 = tamaño estándar de Bootstrap.
+    -->
+    <header id="inicio" class="py-5">
+      <div class="container">
+        <div class="p-4 p-md-5 rounded-4 hero shadow-sm">
+          <h1 class="display-6 fw-bold mb-2">Bootstrap Parte I</h1>
+          <p class="lead mb-3">
+            En este Live Coding aprenderás a crear una página responsiva usando:
+            <span class="fw-semibold">containers</span>,
+            <span class="fw-semibold">grillas</span>,
+            <span class="fw-semibold">tablas</span> y
+            <span class="fw-semibold">componentes</span>.
+          </p>
+
+          <!-- Botones (componentes Bootstrap)
+            - btn: activa estilos de botón
+            - btn-primary: botón principal
+            - btn-outline-primary: versión con borde
+          -->
+          <div class="d-flex gap-2 flex-wrap">
+            <a class="btn btn-primary" href="#grid">Ver Grilla</a>
+            <a class="btn btn-outline-primary" href="#form">Ir a Form</a>
+          </div>
+
+          <p class="mt-3 mb-0 small text-muted">
+            💬 Desafío: cambia <code>.container</code> por <code>.container-fluid</code>
+            y observa el ancho del contenido.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- =========================
+      Banda full-width (container-fluid)
+      =========================
+      - container-fluid: ocupa el 100% del ancho de la pantalla.
+      - Dentro ponemos un container normal para que el texto quede centrado.
+    -->
+    <section class="container-fluid py-4 banda">
+      <div class="container">
+        <h2 id="intro" class="h3 fw-bold mb-2">1) ¿Qué es Bootstrap?</h2>
+        <p class="mb-0">
+          Bootstrap es un framework (marco de trabajo) de CSS + JavaScript que trae
+          clases listas para crear interfaces responsivas: botones, grillas, formularios,
+          navbars, alertas y más.
+        </p>
+      </div>
+    </section>
+
+    <main class="container my-5">
+      <!-- =========================
+        GRILLA (Grid System)
+        =========================
+        - Bootstrap usa una grilla de 12 columnas.
+        - row crea una fila
+        - col-* crea columnas
+        - col-12: 12/12 (todo el ancho)
+        - col-md-4: desde “md” ocupa 4/12 (3 columnas en desktop)
+      -->
+      <section id="grid" class="mb-5">
+
+        <h2 class="h3 fw-bold mb-3">2) Sistema de grillas</h2>
+
+        <div class="row g-3">
+
+          <div class="col-12 col-md-4">
+
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h3 class="h5 fw-bold">Responsive</h3>
+                <p class="mb-0">
+                  En móvil, cada tarjeta ocupa el 100% (<code>col-12</code>).
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h3 class="h5 fw-bold">Breakpoints</h3>
+                <p class="mb-0">
+                  Desde <code>md</code> se arma el layout de 3 columnas.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h3 class="h5 fw-bold">Espaciado</h3>
+                <p class="mb-0">
+                  <code>g-3</code> agrega “gap” entre filas y columnas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-3 small text-muted">
+          💬 Prueba: cambia <code>col-md-4</code> por <code>col-lg-4</code> y observa cuándo
+          “recién” aparece el layout en columnas.
+        </p>
+      </section>
+
+      <!-- ✅ PASO 7: Tabla
+        - Envolver con div class="table-responsive"
+        - table class="table table-striped table-hover"
+        - thead class="table-dark"
+      -->
+      <section id="tabla">
+        <h2>3) Tabla responsiva (wallet)</h2>
+
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th>Saldo</th>
+                <th>Valor actual</th>
+                <th>Variación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- TODO: agrega 5 filas -->
+              <tr>
+                <td>Cuenta bancaria</td>
+                <td>$ 250.000</td>
+                <td>$ 250.000</td>
+                <td>+0%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ✅ PASO 8: Formulario + Alerta
+        - Alerta: class="alert alert-success"
+        - Input: class="form-control"
+        - Botón: class="btn btn-primary"
+      -->
+      <section id="form">
+        <h2>4) Formulario + Alerta</h2>
+
+        <div>
+          ✅ ¡Formulario enviado con éxito!
+        </div>
+
+        <form>
+          <label>Nombre</label>
+          <input type="text" />
+
+          <label>Email</label>
+          <input type="email" />
+
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- ✅ PASO 9: JS de Bootstrap (para componentes interactivos)
+      - Se pega antes del </body>
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

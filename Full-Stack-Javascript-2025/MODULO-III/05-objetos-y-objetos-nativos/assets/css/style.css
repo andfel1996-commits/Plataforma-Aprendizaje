@@ -1,0 +1,25 @@
+/* ==========================================================
+   STYLE.CSS — Objetos + Objetos Nativos
+   - Estilo minimalista: el foco es JavaScript.
+   ========================================================== */
+
+:root {
+  --bg-softer: #0f172a;
+  --text-soft: #e2e8f0;
+  --border-soft: rgba(148, 163, 184, 0.25);
+}
+
+body {
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 40%, #ffffff 100%);
+}
+
+.output {
+  min-height: 360px;
+  background: var(--bg-softer);
+  color: var(--text-soft);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  padding: 14px;
+  overflow: auto;
+  white-space: pre-wrap;
+}

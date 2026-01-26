@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mini Wallet (jQuery) — Pack Docente V5</title>
+
+  <!-- Bootstrap (solo para orden visual) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+  <main class="container py-4 py-md-5" style="max-width: 860px;">
+
+    <!-- HEADER -->
+    <header class="mb-4">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+        <div>
+          <h1 class="mb-1 fw-bold">💳 Mini Wallet</h1>
+          <p class="text-body-secondary mb-0">
+            Fundamentos de jQuery y LocalStorage para crear una mini billetera digital.
+          </p>
+        </div>
+        <span class="badge text-bg-dark rounded-pill px-3 py-2">jQuery + Bootstrap</span>
+      </div>
+    </header>
+
+    <!-- (1) SALDO -->
+    <section class="card shadow-sm mb-3">
+      <div class="card-body d-flex align-items-center justify-content-between flex-wrap gap-3">
+        <div>
+          <h2 class="h6 text-body-secondary mb-1">Saldo actual</h2>
+          <p class="display-5 fw-bold m-0" id="balanceText">$ 0</p>
+        </div>
+
+        <button id="toggleHistoryBtn" class="btn btn-outline-secondary rounded-pill px-4">
+          Ver/ocultar movimientos
+        </button>
+      </div>
+    </section>
+
+    <!-- (2) FORM -->
+    <section class="card shadow-sm mb-3">
+      <div class="card-body">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+          <h3 class="h6 m-0">Nuevo movimiento</h3>
+          <small class="text-body-secondary">Tip: escribe un monto y elige acción</small>
+        </div>
+
+        <div class="row g-3 align-items-end d-flex flex-wrap justify-content-center align-items-center">
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Monto</label>
+
+            <div class="input-group input-group-lg">
+              <span class="input-group-text">$</span>
+              <input
+                id="amountInput"
+                class="form-control"
+                type="text"
+                inputmode="numeric"
+                autocomplete="off"
+                placeholder="Ej: 5000"
+              />
+            </div>
+
+            <small class="text-body-secondary d-block mt-1">Debe ser mayor que 0</small>
+          </div>
+
+          <div class="col-md-6">
+            <div class="d-grid d-md-flex gap-2">
+              <button id="depositBtn" class="btn btn-success btn-lg w-100 rounded-pill">
+                <i class="bi bi-plus-circle text-white"></i> Depositar
+              </button>
+              <button id="withdrawBtn" class="btn btn-danger btn-lg w-100 rounded-pill">
+                <i class="bi bi-dash-circle text-white"></i> Retirar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feedback -->
+        <div id="feedback" class="alert mt-3 mb-0 rounded-3" style="display:none;"></div>
+      </div>
+    </section>
+
+    <!-- (3) HISTORIAL -->
+    <section class="card shadow-sm" id="historyCard" style="display:none;">
+      <div class="card-body">
+        <h3 class="h6 mb-3">Movimientos</h3>
+        <ul id="historyList" class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <div>
+                    <span class="badge ${badgeCssClass} me-2">${movementLabelText}</span>
+                    <strong>${amountText}</strong>
+                    <small class="text-muted ms-2">${movementRecord.movementDateText}</small>
+                  </div>
+
+                  <!-- data-index guarda el índice en el array -->
+                  <button class="btn btn-sm btn-outline-secondary deleteBtn" data-index="${index}">
+                    Eliminar
+                  </button>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+  <!-- jQuery (obligatorio) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Tu JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

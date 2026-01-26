@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Funciones JS — Parte II (AE3.4)</title>
+
+  <!-- Bootstrap (solo para orden visual; NO es obligatorio) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous"
+  >
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <header class="container py-4">
+    <div class="d-flex flex-column gap-2">
+      <h1 class="h3 m-0">Funciones en JavaScript — Parte II (AE3.4)</h1>
+      <p class="m-0 text-secondary">
+        Demo para clase + botones para ejecutar ejemplos.
+        Abre la consola (F12) y/o mira la salida en pantalla.
+      </p>
+    </div>
+  </header>
+
+  <main class="container pb-4">
+    <div class="row g-3">
+      <section class="col-12 col-lg-5">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h2 class="h5">Panel de demos</h2>
+            <p class="text-secondary small">
+              Consejo: ejecuta de arriba hacia abajo, como en clase.
+            </p>
+
+            <div class="d-grid gap-2">
+              <button class="btn btn-dark" id="btn-limpiar">Limpiar salida</button>
+
+              <hr class="my-2" />
+
+              <button class="btn btn-outline-primary" id="btn-demo-1">
+                1) Parámetro obligatorio + validación
+              </button>
+
+              <button class="btn btn-outline-primary" id="btn-demo-2">
+                2) Parámetro por defecto (opcional)
+              </button>
+
+              <button class="btn btn-outline-primary" id="btn-demo-3">
+                3) Múltiples parámetros + return
+              </button>
+
+              <button class="btn btn-outline-primary" id="btn-demo-4">
+                4) Operador Rest (...) + reduce
+              </button>
+
+              <button class="btn btn-outline-primary" id="btn-demo-5">
+                5) Callback (función como parámetro)
+              </button>
+
+              <button class="btn btn-outline-primary" id="btn-demo-6">
+                6) Scope (local vs global) + función anidada
+              </button>
+
+              <hr class="my-2" />
+
+              <button class="btn btn-success" id="btn-demo-todo">
+                Ejecutar TODO (resumen)
+              </button>
+            </div>
+
+            <div class="alert alert-info mt-3 mb-0 small">
+              <strong>Ejercicios:</strong> están en
+              <code>assets/js/ejercicios/</code> (archivos <em>alumno</em> y <em>solución</em>).
+              No se cargan automáticamente en esta página.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="col-12 col-lg-7">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between">
+              <h2 class="h5 m-0">Salida en pantalla</h2>
+              <span class="badge text-bg-secondary">#output</span>
+            </div>
+            <p class="text-secondary small mt-2">
+              Esto replica lo que verías en la consola. Útil para estudiantes que aún no manejan DevTools.
+            </p>
+
+            <pre id="output" class="output" aria-live="polite"></pre>
+
+            <p class="text-secondary small mb-0">
+              Si no ves nada, presiona algún botón del panel.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="mt-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h2 class="h5">Checklist rápido (docente)</h2>
+          <ul class="m-0">
+            <li>Si falta un parámetro → queda <code>undefined</code>.</li>
+            <li>Si opero con <code>undefined</code> en matemática → aparece <code>NaN</code>.</li>
+            <li>Si no hay <code>return</code> → la función devuelve <code>undefined</code>.</li>
+            <li>Variables locales viven dentro de la función; globales viven afuera (¡cuidado!).</li>
+            <li><code>...rest</code> captura muchos argumentos como array; debe ir al final.</li>
+            <li>Callback = pasar una función como parámetro para personalizar comportamiento.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container pb-4">
+    <p class="text-secondary small m-0">
+      Funciones JS Parte II (AE3.4)
+    </p>
+  </footer>
+
+  <script src="assets/js/app.demo.js"></script>
+</body>
+</html>

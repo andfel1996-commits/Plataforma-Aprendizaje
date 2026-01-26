@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Aprendiendo Jquery - Alejandro Becerra</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+		.zebra{
+			border:5px dashed black;
+			padding: 10px;
+		}
+		.grande{
+			font-size: 30px;
+		}
+
+		.margen-superior{
+			display: block;
+			margin-top: 45px;
+		}
+
+		.resaltado{
+			border-bottom: 1px solid green;
+		}
+	</style>
+
+</head>
+<body>
+
+	<div class="container my-5">
+
+	   <h1 class="display-5 font-weight-bold">Selectores Jquery - Alejandro Becerra</h1>
+
+	   <hr class="py-2">
+	   
+	   <h3 class="display-5 font-weight-bold">Selector ID y Clases</h3>
+	   <hr class="py-2">
+	   <p id="rojo" class="sin-borde">Ejercicios de Jquery</p>
+	   <p id="amarillo" class="zebra">Practicando con Selectores</p>
+	   <p id="verde" class="sin-borde">Quiero ser un parrafo Verde</p>
+	   <p class="zebra">Soy un Parrafo Blanco</p>
+		
+	   <h3 class="display-5 font-weight-bold py-3">Selector Por Atributo [ ]</h3>
+	   <hr class="py-3">
+	   <ul>
+	   	<li><a href="http:https://www.google.com/" title="Google">Google</a></li>
+	   	<li><a href="https://www.facebook.com/" title="Facebook">Facebook</a></li>
+	   </ul>
+
+	   <!-- Metodo Find -->
+	   <div id="caja">
+	   	<p>Hola Soy una Caja</p>
+	   	<ul>
+	   		<li>Elemento 1</li>
+	   		<li id="elemento2">Elemento 2</li>
+	   	</ul>
+	   	<span class="resaltado">Texto Resaltado</span>
+	   </div>
+
+
+	</div>
+
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/02-selector-jquery.js"></script>
+    
+</body>
+</html>
