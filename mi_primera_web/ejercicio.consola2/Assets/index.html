@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alke Wallet- Inicio De Sesion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        body {
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <main class="flex-grow-1 d-flex align-items-center justify-content-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+                    <header class="mb-4">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2"> </div>
+                        <div>
+                            <h1 class="mb-1 fw-bold"> Alke Wallet</h1>
+                            <p class="text-body-secondary mb-0">
+                                Inicia sesión o regístrate para administrar tu Alke Wallet.
+                            </p>
+                        </div>
+
+                    </header>
+                    <div class="container">
+                        <div class="" style="max-width: 400px;">
+                            <div class="card-body">
+                                <div id="alert-container"></div>
+                                <form id="loginForm">
+                                    <div class="form-group">
+                                        <label for="email">Email:</label>
+                                        <input type="email" class="form-control" id="email" required
+                                            placeholder="Ingresa email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Contraseña:</label>
+                                        <input type="password" class="form-control" id="password" required
+                                            placeholder="Ingresa contraseña">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                                    <button type="button" id="registerBtn"
+                                        class="btn btn-link btn-block">Registrarse</button>
+                                    <div class="form-group">
+                                        <label for="Nuevo-usuario">Nuevo usuario:</label>
+                                        <input type="text" class="form-control" id="Nuevo-usuario" required
+                                            placeholder="Crear nuevo usuario">
+                                        <input type="email" class="form-control" id="Nuevo-email" required
+                                            placeholder="Crear nuevo email">
+                                        <input type="password" class="form-control" id="Nuevo-password" required
+                                            placeholder="Crear nueva contraseña">
+                                    </div>
+
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+    </main>
+    <footer class="bg-white border-top p-3 text-center">
+        <div class="container">
+            <span class="text-muted">© 2026 Alke Wallet - Todos los derechos reservados.</span>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <!-- jQuery (obligatorio) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Tu JS -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

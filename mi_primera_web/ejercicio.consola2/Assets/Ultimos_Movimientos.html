@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Movimientos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="card shadow">
+            <div class="card-body">
+                <h3>Últimos Movimientos</h3>
+                <div class="form-group w-50">
+                    <label>Filtrar por tipo:</label>
+                    <select id="filter-type" class="form-control">
+                        <option value="todos">Todos</option>
+                        <option value="compra">Compra</option>
+                        <option value="deposito">Depósito</option>
+                        <option value="transferencia">Transferencia Recibida</option>
+                    </select>
+                </div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Descripción</th>
+                            <th>Tipo</th>
+                            <th>Monto</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transaction-list"></tbody>
+                </table>
+                <a href="menu.html" class="btn btn-secondary">Volver</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

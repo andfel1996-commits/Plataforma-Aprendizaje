@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Depositar - Wallet</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="card mx-auto shadow" style="max-width: 500px;">
+            <div class="card-body">
+                <h3>Realizar Depósito</h3>
+                <p>Saldo actual: <strong>$<span id="current-balance"></span></strong></p>
+                <div id="alert-container"></div>
+                <form id="depositForm">
+                    <div class="form-group">
+                        <input type="number" id="amount" class="form-control" placeholder="Monto a depositar" required>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block">Confirmar Depósito</button>
+                    <button type="submit" class="btn btn-success btn-block">Confirmar retiro</button>
+                </form>
+                <p id="confirm-legend" class="mt-3 text-center font-weight-bold text-success"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            let saldo = parseFloat(localStorage.getItem('wallet_saldo'));
+            $('#current-balance').text(saldo.toFixed(2));
+
+            $('#depositForm').submit(function(e) {
+                e.preventDefault();
+                const monto = parseFloat($('#amount').val());
+                
+                if (monto > 0) {
+                    saldo += monto;
+                    localStorage.setItem('saldo', saldo.toFixed(2));
+                    
+                    $('#confirm-legend').text('Has depositado: $' + monto.toFixed(2));
+                    $('#alert-container').html('<div class="alert alert-success">Depósito exitoso. Volviendo al menú...</div>');
+                    
+                    setTimeout(() => { window.location.href = 'menu.html'; }, 2000);
+                } else if (monto < 0) {
+                    const retiro = Math.abs(monto);
+                    if (retiro <= saldo) {
+                        saldo -= retiro;
+                        localStorage.setItem('saldo', saldo.toFixed(2));
+                        
+                        $('#confirm-legend').text('Has retirado: $' + retiro.toFixed(2));
+                        $('#alert-container').html('<div class="alert alert-success">Retiro exitoso. Volviendo al menú...</div>');
+                        
+                        setTimeout(() => { window.location.href = 'menu.html'; }, 2000);
+                    } else {
+                        $('#alert-container').html('<div class="alert alert-danger">Saldo insuficiente para el retiro.</div>');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
