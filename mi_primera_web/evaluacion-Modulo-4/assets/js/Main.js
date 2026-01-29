@@ -38,12 +38,8 @@ class GestorTareas {
         alert("!Nueva tarea registrada exitosamente");
     }
 }
+// Ejemplo de instanciación
     const miGestor = new GestorTareas();
     miGestor.agregarTarea("Aprender POO en js");
     miGestor.agregarTarea("Configurar repositorio git");
  
-// Ejemplo de instanciación (Requerido para la entrega)
-// const miGestor = new GestorTareas();
-// miGestor.agregarTarea("Estudiar POO en JavaScript");
-// miGestor.agregarTarea("Hacer ejercicio");
-// console.log(miGestor.tareas);
