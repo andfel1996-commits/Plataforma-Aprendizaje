@@ -1,4 +1,4 @@
-// Clase Tarea: define cómo es una sola tarea
+// Class Tarea: define como es una sola tarea
 class Tarea {
     constructor(id, descripcion) {
         this.id = id;
@@ -19,27 +19,27 @@ class GestorTareas {
     }
 
     agregarTarea(descripcion) {
-        console.log ("Agregando tarea...");
+        console.log("Agregando tarea...");
         //simla un retardo de 2 segundos
-        setTimeout(() =>{
-        const nuevaTarea = new Tarea(this.tareas.length + 1, descripcion);
-        this.tareas.push(nuevaTarea);
-        console.log(`Tarea Agregada: ${descripcion}`);
-        this.mostrarNotificacion(); // notificacion tras 2 segundos
-        }, 2000);   
-        }
+        setTimeout(() => {
+            const nuevaTarea = new Tarea(this.tareas.length + 1, descripcion);
+            this.tareas.push(nuevaTarea);
+            console.log(`Tarea Agregada: ${descripcion}`);
+            this.mostrarNotificacion(); // notificacion tras 2 segundos
+        }, 2000);
+    }
 
     eliminarTarea(id) {
         this.tareas = this.tareas.filter(t => t.id !== id);
         console.log(`Tarea con id ${id} eliminada.`);
     }
     // funcion de notificacion asincrona
-    mostrarNotificacion(){
+    mostrarNotificacion() {
         alert("!Nueva tarea registrada exitosamente");
     }
 }
 // Ejemplo de instanciación
-    const miGestor = new GestorTareas();
-    miGestor.agregarTarea("Aprender POO en js");
-    miGestor.agregarTarea("Configurar repositorio git");
- 
+const miGestor = new GestorTareas();
+miGestor.agregarTarea("Aprender POO en js");
+miGestor.agregarTarea("Configurar repositorio git");
+
