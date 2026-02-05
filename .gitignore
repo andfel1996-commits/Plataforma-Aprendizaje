@@ -1,0 +1,16 @@
+# Dependencias de Node (Babel, etc.)
+node_modules/
+dist/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Logs de error
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Carpetas de configuración de editores
+.vscode/
+.idea/
