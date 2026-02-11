@@ -2,12 +2,20 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Nuevo Proyecto - Módulo 5</title>
-    <link rel="stylesheet" href="./css/main.css">
-</head>
+    <title>Gestor de Tareas Pro</title>
+    <link rel="stylesheet" href="./css/main.css"> </head>
 <body>
-    <h1 id="titulo">Mi Nuevo Proyecto</h1>
-    <button id="botonPrueba">Haz clic aquí</button>
+    <div id="app">
+        <h1>Mi Gestor de Tareas</h1>
+        
+        <form id="miFormulario">
+            <input type="text" id="tareaInput" placeholder="Escribe una tarea..." required>
+            <button type="submit">Agregar</button>
+        </form>
+
+        <div id="notificacion" class="oculto"></div>
+        <div id="listaTareas"></div>
+    </div>
 
     <script src="./js/Main.js"></script>
 </body>
