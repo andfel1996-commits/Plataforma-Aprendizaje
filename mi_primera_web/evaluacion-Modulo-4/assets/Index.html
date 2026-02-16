@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Gestor de Tareas Pro</title>
-    <link rel="stylesheet" href="./css/main.css"> </head>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
 <body>
     <div id="app">
         <h1>Mi Gestor de Tareas</h1>
-        
+
         <form id="miFormulario">
             <input type="text" id="tareaInput" placeholder="Escribe una tarea..." required>
+            <input type="datetime-local" id="fechaInput" required>
             <button type="submit">Agregar</button>
         </form>
-
+        <div class="tiempo-restante" data-limite="2026-12-31T23:59:59"></div>
         <div id="notificacion" class="oculto"></div>
         <div id="listaTareas"></div>
     </div>
 
     <script src="./js/Main.js"></script>
 </body>
+
 </html>

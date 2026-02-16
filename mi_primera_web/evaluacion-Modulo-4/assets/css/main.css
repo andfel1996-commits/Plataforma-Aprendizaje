@@ -50,9 +50,12 @@ button:hover { background-color: #2980b9; }
 }
 
 .tarea.completada {
-    background-color: #d4edda;
-    text-decoration: line-through;
-    color: #155724;
+    background-color: #d4edda; /* Verde claro */
+    opacity: 0.8;
+}
+
+.tarea.completada span {
+    color: #6c757d;
 }
 
 #notificacion {
