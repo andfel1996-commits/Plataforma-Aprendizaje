@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ECMA6 (ES6+) — Clase II — Demo</title>
+  <style>
+    /* CSS mínimo para que la demo se vea clara en pantalla */
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; line-height: 1.4; }
+    h1 { margin: 0 0 10px; }
+    .note { color: #444; max-width: 900px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin: 16px 0 18px; max-width: 1000px; }
+    button { padding: 10px 12px; border-radius: 10px; border: 1px solid #bbb; background: #fff; cursor: pointer; text-align: left; }
+    button:hover { background: #f6f6f6; }
+    .panel { border: 1px solid #ddd; border-radius: 12px; padding: 14px; max-width: 1000px; background: #fafafa; }
+    pre { white-space: pre-wrap; word-break: break-word; margin: 0; }
+    .small { font-size: 13px; color: #666; }
+    code { background: #eee; padding: 2px 6px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>ECMA6 (ES6+) — Clase II — Demo</h1>
+
+  <p class="note">
+    Esta demo está pensada para mostrarse en vivo. Cada botón ejecuta una sección.
+    La salida aparece <b>en consola</b> y también aquí abajo.
+  </p>
+
+  <div class="grid">
+    <button id="btn-01">
+      <b>1) Variables y Funciones</b><br/>
+      <span class="small">let/const, scope, template literals, arrow functions, defaults</span>
+    </button>
+
+    <button id="btn-02">
+      <b>2) Destructuring, Spread y Rest</b><br/>
+      <span class="small">extraer datos, copiar/combinar, parámetros flexibles</span>
+    </button>
+
+    <button id="btn-03">
+      <b>3) Clases y Módulos</b><br/>
+      <span class="small">class, herencia, private fields, import/export</span>
+    </button>
+
+    <button id="btn-04">
+      <b>4) Sets, Maps e Iteradores</b><br/>
+      <span class="small">valores únicos, claves avanzadas, generators</span>
+    </button>
+
+    <button id="btn-05">
+      <b>5) Promesas y Async/Await</b><br/>
+      <span class="small">simular API, encadenamiento, try/catch</span>
+    </button>
+
+    <button id="btn-clear">
+      <b>Limpiar salida</b><br/>
+      <span class="small">borra el panel</span>
+    </button>
+  </div>
+
+  <div class="panel">
+    <div class="small">Salida en pantalla (además de la consola):</div>
+    <pre id="output"></pre>
+  </div>
+
+  <p class="small">
+    Tip docente: abre <code>src/</code> y muestra el código sección por sección.
+  </p>
+
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

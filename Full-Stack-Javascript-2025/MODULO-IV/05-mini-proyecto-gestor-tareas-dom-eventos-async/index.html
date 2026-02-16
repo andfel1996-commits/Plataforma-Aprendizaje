@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestor de tareas (DOM + Eventos + Async)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<!-- =========================================================
+  MAPA DE IDs IMPORTANTES (los seleccionamos desde app.js)
+  ---------------------------------------------------------
+  - #formulario-tarea  -> escuchar submit + preventDefault
+  - #entrada-tarea     -> leer texto de la tarea
+  - #estado-ui         -> mostrar "cargando / ok / error"
+  - #btn-cargar-demo   -> cargar tareas desde la fake API
+  - #lista-tareas      -> delegación de eventos (click en botones)
+========================================================= -->
+
+<body>
+  <header class="contenedor">
+    <h1>Gestor de tareas</h1>
+    <p class="muted">Demo práctica: DOM + Eventos + Asincronía (sin frameworks).</p>
+  </header>
+
+  <main class="contenedor">
+    <section class="tarjeta" aria-labelledby="titulo-form">
+      <h2 id="titulo-form">Nueva tarea</h2>
+
+      <!--
+        ID CLAVE: #formulario-tarea
+        - En app.js escuchamos el evento "submit"
+        - Usamos preventDefault() para que NO recargue la página
+      -->
+      <form id="formulario-tarea" autocomplete="off">
+        <label for="entrada-tarea">Escribe una tarea</label>
+
+        <div class="fila">
+          <!--
+            ID CLAVE: #entrada-tarea
+            - En app.js leemos entrada.value para obtener el texto
+          -->
+          <input
+            id="entrada-tarea"
+            name="entrada-tarea"
+            type="text"
+            placeholder="Ej: Estudiar eventos en JavaScript"
+            aria-describedby="ayuda-entrada"
+          />
+
+          <!--
+            ID: #btn-agregar (opcional)
+            - No lo seleccionamos en JS (porque usamos submit del form)
+            - Pero sirve para ubicar el botón en DevTools
+          -->
+          <button id="btn-agregar" type="submit">Agregar</button>
+        </div>
+
+        <p id="ayuda-entrada" class="muted">
+          Tip: presiona <strong>Enter</strong> para agregar.
+        </p>
+      </form>
+
+      <!--
+        ID CLAVE: #estado-ui
+        - Aquí mostramos mensajes:
+          "Cargando..." / "Guardado OK" / "Error..."
+        - dom.js usa mostrarEstado({ texto, tipo })
+      -->
+      <div id="estado-ui" class="estado" role="status" aria-live="polite"></div>
+    </section>
+
+    <div class="fila" style="margin-top: 10px;">
+      <!--
+        ID CLAVE: #btn-cargar-demo
+        - En app.js escuchamos click para cargar tareas desde fakeApi.js
+      -->
+      <button id="btn-cargar-demo" type="button">Cargar tareas demo</button>
+    </div>
+
+    <section class="tarjeta" aria-labelledby="titulo-lista">
+      <h2 id="titulo-lista">Lista de tareas</h2>
+
+      <!--
+        ID CLAVE: #lista-tareas
+        - Aquí renderizamos <li> dinámicos (createElement + appendChild)
+        - Aquí aplicamos delegación de eventos:
+          un solo listener en el <ul> maneja clicks en los botones dentro de cada <li>
+      -->
+      <ul id="lista-tareas" class="lista" aria-live="polite">
+        <!--  -->
+        <!-- <li>
+          Tarea 1
+          <span>Activa</span>
+          <button>Completar</button>
+          <button>Eliminar</button>
+        </li> -->
+      </ul>
+
+      <p class="muted">
+        Consejo: abre DevTools → Elements para ver <code>data-id</code> y <code>data-estado</code>.
+      </p>
+    </section>
+  </main>
+
+  <footer class="contenedor muted">
+    <small>Docente: ALEJANDRO BECERRA · Fecha: 2030</small>
+  </footer>
+
+  <!-- Punto de entrada del proyecto (módulo). Desde aquí se importan los demás archivos -->
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
