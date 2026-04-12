@@ -1,0 +1,23 @@
+{
+  "name": "01-conociendo-node-y-express-parte-i",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev" : "nodemon 02-express-api/app.js",
+    "node:http": "nodemon 01-node-basico/01-http-server.js",
+    "node:fs:cb": "nodemon 01-node-basico/02-fs-callbacks.js",
+    "node:fs:aa": "nodemon 01-node-basico/03-fs-async-await.js",
+    "node:event-loop": "nodemon 01-node-basico/04-event-loop-demo.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

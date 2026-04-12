@@ -1,0 +1,172 @@
+{
+  "info": {
+    "_postman_id": "04-jwt-simple",
+    "name": "04-JWT Simple",
+    "description": "Coleccion minima para demo de JWT.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const json = pm.response.json();",
+              "if (json?.data?.token) pm.collectionVariables.set('token', json.data.token);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"admin@tutorial.dev\",\n  \"password\": \"Admin123*\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/auth/login",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Perfil (protegido)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/perfil",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "perfil"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Perfil sin token (401)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/perfil",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "perfil"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Logout",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// Si el logout fue exitoso, borramos el token guardado en la colección.",
+              "// Así el siguiente request que use {{token}} fallará con 401,",
+              "// demostrando que la sesión quedó cerrada.",
+              "if (pm.response.code === 200) pm.collectionVariables.set('token', '');"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "description": "Token activo obtenido en el Login"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/auth/logout",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "auth",
+            "logout"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Perfil después de Logout (401)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// Este request demuestra que el token revocado ya no sirve.",
+              "// Aunque el JWT no haya expirado, el servidor lo rechaza con 401.",
+              "pm.test('Token revocado → 401', () => pm.response.to.have.status(401));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{tokenRevocado}}",
+            "description": "Pega aquí el token usado antes del logout"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/perfil",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "perfil"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3001"
+    },
+    {
+      "key": "token",
+      "value": ""
+    },
+    {
+      "key": "tokenRevocado",
+      "value": "",
+      "description": "Pega aquí el token antes de hacer logout para probar el rechazo posterior"
+    }
+  ]
+}

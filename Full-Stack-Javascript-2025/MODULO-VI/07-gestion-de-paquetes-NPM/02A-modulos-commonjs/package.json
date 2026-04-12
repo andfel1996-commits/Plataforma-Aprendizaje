@@ -1,0 +1,9 @@
+{
+  "name": "02-modulos-commonjs",
+  "version": "1.0.0",
+  "description": "Demo: módulos CommonJS (require/module.exports).",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  }
+}

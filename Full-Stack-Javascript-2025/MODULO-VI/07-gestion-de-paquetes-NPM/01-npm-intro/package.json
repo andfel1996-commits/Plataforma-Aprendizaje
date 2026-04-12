@@ -1,0 +1,21 @@
+{
+  "name": "01-npm-intro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "start" : "nodemon src/info.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "dayjs": "^1.11.11"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.13"
+  }
+}

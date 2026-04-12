@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {{! ======== RUTAS PÚBLICAS (solo sin sesión) ======== }}
+                {{#unless estado}}
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/galeria">Galería</a></li>
+                <li class="nav-item"><a class="nav-link" href="/lenguajes">Lenguajes</a></li>
+                <li class="nav-item"><a class="nav-link" href="/colores">Colores</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contacto">Contacto</a></li>
+                {{/unless}}
+
+                {{! ======== RUTAS PRIVADAS (solo con sesión) ======== }}
+                {{#if estado}}
+                <li class="nav-item"><a class="nav-link" href="/imagen">🖼️ Subir Imagen</a></li>
+                <li class="nav-item"><a class="nav-link" href="/tienda">🛒 Tienda</a></li>
+                {{/if}}
+            </ul>
+
+            {{! ======== LADO DERECHO ======== }}
+            <ul class="navbar-nav ms-auto align-items-center gap-2">
+
+                {{! Sin sesión → formulario login }}
+                {{#unless estado}}
+                <li class="nav-item">
+                    <form class="d-flex gap-2" action="/login" method="POST">
+                        <input class="form-control form-control-sm" name="usuario" placeholder="Usuario" required />
+                        <input class="form-control form-control-sm" type="password" name="password"
+                            placeholder="Password" required />
+                        <button class="btn btn-outline-success btn-sm" type="submit">Ingresar</button>
+                    </form>
+                </li>
+                {{/unless}}
+
+                {{! Con sesión → bienvenida + logout + carrito }}
+                {{#if estado}}
+                <li class="nav-item">
+                    <span class="navbar-text text-success me-2">
+                        👤 Hola, <strong>{{ usuario }}</strong>
+                    </span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout" title="Cerrar sesión">
+                        <img width="35" src="/img/cerrar-sesion.png" alt="Cerrar sesión" />
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/tienda" title="Carrito">
+                        <img id="ecomerce" width="35" src="/img/carrito-de-compras.png" alt="Carrito" />
+                    </a>
+                </li>
+                {{/if}}
+
+            </ul>
+
+        </div>
+    </div>
+</nav>

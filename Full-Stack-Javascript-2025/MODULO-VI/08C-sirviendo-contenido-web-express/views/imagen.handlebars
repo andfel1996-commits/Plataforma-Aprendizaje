@@ -1,0 +1,44 @@
+{{> page/nav}}
+<p class="container mt-3">{{> page/title}}</p>
+<hr class="container">
+
+<div class="container mt-5">
+    <h2 class="mb-4">{{ title }}</h2>
+
+    <div class="card p-4 shadow-sm">
+        <form id="formImagen">
+
+            <div class="mb-3">
+                <label for="url" class="form-label">URL de la imagen</label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    id="url" 
+                    placeholder="https://ejemplo.com/imagen.jpg"
+                    required
+                />
+            </div>
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre del archivo</label>
+                <input 
+                    type="text" 
+                    class="form-control w-100" 
+                    id="name" 
+                    placeholder="mi-imagen.jpg"
+                    required
+                />
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Subir Imagen
+            </button>
+
+        </form>
+    </div>
+
+    {{! Área donde se mostrará el resultado }}
+    <div id="resultado" class="mt-4"></div>
+
+</div>
+

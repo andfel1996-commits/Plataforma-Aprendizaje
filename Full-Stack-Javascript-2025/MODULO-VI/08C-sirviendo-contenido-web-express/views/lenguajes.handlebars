@@ -1,0 +1,9 @@
+{{> page/nav}}
+<p class="container mt-3">{{> page/title}}</p>
+<hr class="container">
+<ul class="list-group list-group-flush container">
+    {{#each lenguajesFronend}}
+        <li class="list-group-item">{{this}}</li>
+    {{/each}}
+</ul>
+<div class="alert alert-warning container" role="alert">{{contacto message}}</div>

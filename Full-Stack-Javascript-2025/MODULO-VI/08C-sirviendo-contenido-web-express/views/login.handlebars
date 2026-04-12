@@ -1,0 +1,16 @@
+{{> page/nav}}
+
+{{#if estado}}
+    <h5 class="container mt-5">Bienvenid@: {{usuario}}</h5>
+    <p class="container mt-3">{{> page/mensaje}}</p>
+    <hr class="container">
+{{/if}}
+
+{{#unless estado}}
+    <div class="alert alert-danger container my-5" role="alert">
+        Ha cerrado sesión, para ingresar debe registrar usuario y contraseña!!
+    </div>
+{{/unless}}
+
+
+

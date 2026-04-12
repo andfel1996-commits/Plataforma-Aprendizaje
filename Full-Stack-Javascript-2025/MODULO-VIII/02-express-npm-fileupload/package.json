@@ -1,0 +1,22 @@
+{
+  "name": "02-express-npm-fileupload",
+  "version": "1.0.0",
+  "description": "Gestor de carga de archivos con patrón MVC y Handlebars",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "dev": "node --watch app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-fileupload": "^1.5.2",
+    "hbs": "^4.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

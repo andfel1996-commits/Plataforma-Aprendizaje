@@ -1,0 +1,27 @@
+{{> partials/navbars}}
+<div class="container vh-100">
+    <h1 class="h5">{{> partials/title }}</h1>
+    <hr>
+    {{#if error}}
+        <div class="alert alert-danger">{{error}}</div>
+    {{/if}}
+    <div class="row">
+        {{#each posts}}
+            <div class="col-md-3 my-5">
+                <div class="cardContent">
+                    {{#if this.imagen}}
+                    <img src="/img/publicaciones/{{this.imagen}}" alt="{{this.titulo}}" class="imgCard mb-2">
+                    {{else}}
+                    <img src="/img/300x200.png" alt="Imagen por defecto" class="imgCard mb-2">
+                    {{/if}}
+                    <h4>{{this.titulo}}</h4>
+                    <p>{{this.contenido}}</p>
+                    {{#if this.autor}}
+                        <small class="text-muted">{{this.autor.nombre}}</small>
+                    {{/if}}
+                </div>
+            </div>
+        {{/each}}    
+    </div>
+</div>
+{{> partials/footer}}

@@ -1,0 +1,9 @@
+{
+  "name": "02-process-argv-validacion",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js"
+  }
+}

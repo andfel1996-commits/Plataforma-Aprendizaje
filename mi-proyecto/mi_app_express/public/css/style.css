@@ -1,0 +1,92 @@
+/* Estilos para el navbar */
+nav {
+  background-color: #2c3e50;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Lista de enlaces */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo de los enlaces */
+nav ul li a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #1abc9c;
+}
+
+/* Formulario de login */
+nav form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Inputs del formulario */
+nav form input[type="text"],
+nav form input[type="password"] {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+nav form input[type="text"]:focus,
+nav form input[type="password"]:focus {
+  box-shadow: 0 0 5px #1abc9c;
+}
+
+/* Botón de ingresar */
+nav form button {
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+nav form button:hover {
+  background-color: #16a085;
+}
+
+/* Saludo y enlace de logout */
+nav span {
+  color: #ecf0f1;
+  font-weight: 600;
+  margin-right: 15px;
+}
+
+nav a.logout-link {
+  color: #e74c3c;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 6px 12px;
+  border: 1px solid #e74c3c;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a.logout-link:hover {
+  background-color: #e74c3c;
+  color: white;
+}

@@ -1,0 +1,28 @@
+/* styles.css */
+
+/* Le damos un "look" distinto al hero (sobre Bootstrap) */
+.hero {
+  background: linear-gradient(135deg, #0d6efd, #6f42c1);
+  color: white;
+}
+
+/* Pequeñas mejoras visuales */
+.navbar-brand {
+  letter-spacing: 0.2px;
+}
+
+code {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.35rem;
+}
+
+/* Card más suave */
+.card {
+  border-radius: 1rem;
+}
+
+/* Footer */
+footer {
+  background: #fff;
+}

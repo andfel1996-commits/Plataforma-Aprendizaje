@@ -35,3 +35,20 @@ MODULO-V/complementario/
 MODULO-V/modelo.sql
 MODULO-V/03-manipulacion-de-datos-y-transaccionalidad-Parte-1/guia/03_soluciones.md
 MODULO-V/04-manipulacion-de-datos-y-transaccionalidad-Parte-2/guia/03_soluciones.md
+MODULO-V/05-sentencias-definicion-tablas-DDL/guia/03_soluciones.md
+MODULO-V/05-sentencias-definicion-tablas-DDL/sql/06_reto_practico_soluciones.sql
+MODULO-V/06-sentencias-definicion-tablas-DDL-parte2-clase2/guia/03_soluciones.md
+MODULO-V/06-sentencias-definicion-tablas-DDL-parte2-clase2/sql/05_reto_practico_clase2_soluciones.sql
+MODULO-V/07-el-modelo-entidad-relación/
+MODULO-VI/01-Conociendo-Node-y-Express-Parte-I/node_modules/
+MODULO-VI/*/node_modules/
+MODULO-VI/*/.env
+MODULO-VI/06-Nodejs-restapi-express-dev/server/node_modules/
+**/node_modules/
+MODULO-VI/07-gestion-de-paquetes-NPM/*/node_modules/
+MODULO-VI/11-ejecucion_de_un_aplicativo_Node_Parte-I/00-guion-clase/README.md
+MODULO-VII/*/.env
+
+**/.env
+
+# Logs

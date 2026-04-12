@@ -1,0 +1,20 @@
+### 1. Login para obtener el token
+POST http://localhost:3000/login
+Content-Type: application/x-www-form-urlencoded
+
+email=andfel1996@gmail.com.com&password=123456
+
+### Copia el token que te devuelva la petición de arriba y pégalo abajo
+### 2. Subida de imagen (Módulo 8)
+POST http://localhost:3000/upload
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzc2MDE0MzEwLCJleHAiOjE3NzYwMjg3MTB9.1XC2JIO9gkMMriZjSEOhBnUTZDwL80YMhG5ix78z-vM
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="avatar"; filename="foto.png"
+Content-Type: image/png
+
+< ./public/test.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+### 3. Listado de usuarios (Verificación final)
+GET http://localhost:3000/users

@@ -1,0 +1,4 @@
+Notas de la clase:
+-Node.js
+-Event Loop
+ Express

@@ -1,0 +1,19 @@
+{
+  "name": "05-manejo-dependencia-inquirer",
+  "version": "1.0.0",
+  "description": "Demo uso de la dependencia npm Inquirer",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "inquirer": "^9.3.7"
+  }
+}

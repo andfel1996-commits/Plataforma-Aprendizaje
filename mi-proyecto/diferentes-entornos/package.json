@@ -1,0 +1,14 @@
+{
+  "name": "mi-app-node",
+  "version": "1.0.0",
+  "description": "Aplicación Node.js para simulación con manejo de señales y compatibilidad con PM2",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

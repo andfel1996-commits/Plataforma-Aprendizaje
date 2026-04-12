@@ -1,0 +1,95 @@
+/* Variables de color y fuentes */
+:root {
+    --primary-color: #00d4ff;
+    --bg-color: #0f172a;
+    --text-color: #f1f5f9;
+    --card-bg: #1e293b;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header BEM */
+.header {
+    background: rgba(15, 23, 42, 0.9);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid #334155;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav__link {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav__link:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero__title span {
+    color: var(--primary-color);
+}
+
+.hero__button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--bg-color);
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Caso de Estudio */
+.case-study {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.case-study__tags {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+.case-study__tags li {
+    background: #334155;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
