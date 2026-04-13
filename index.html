@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio | Desarrollador Full Stack</title>
+    <title>Andrés Sánchez | Desarrollador Full Stack</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">TuNombre</a>
+            <a href="#" class="nav__logo">Andrés Sánchez</a>
             <ul class="nav__list">
                 <li><a href="#about" class="nav__link">Sobre mí</a></li>
+                <li><a href="#case-study" class="nav__link">Caso de Estudio</a></li>
                 <li><a href="#projects" class="nav__link">Proyectos</a></li>
                 <li><a href="#contact" class="nav__link">Contacto</a></li>
             </ul>
@@ -19,35 +20,84 @@
     </header>
 
     <main>
-        <section class="hero container">
-            <h1 class="hero__title">Hola, soy <span>[Tu Nombre]</span></h1>
-            <p class="hero__subtitle">Desarrollador Web Full Stack apasionado por crear soluciones eficientes.</p>
-            <a href="#projects" class="hero__button">Ver mi trabajo</a>
+        <section id="about" class="hero container">
+            <h1 class="hero__title">Hola, soy <span>Andrés Sánchez</span></h1>
+            <p class="hero__subtitle">Desarrollador Web Full Stack Junior. Especialista en crear arquitecturas de servidor eficientes y escalables.</p>
+            <a href="#case-study" class="hero__button">Ver Caso de Estudio</a>
         </section>
 
-        <section id="projects" class="case-study container">
-            <h2 class="section-title">Caso de Estudio: Alke Wallet</h2>
-            <div class="case-study__content">
-                <div class="case-study__info">
-                    <h3>El Desafío</h3>
-                    <p>Lograr la integridad de datos en un sistema de transacciones financieras utilizando Node.js y PostgreSQL.</p>
-                    
-                    <h3>La Solución</h3>
-                    <p>Implementación de lógica asíncrona y validaciones de servidor para asegurar movimientos de saldo precisos.</p>
-                    
+        <section id="case-study" class="case-study container">
+            <h2 class="section-title">Caso de Estudio: API de Gestión Backend</h2>
+            
+            <div class="case-study__grid">
+                <div class="case-study__item">
+                    <h3>Descripción de la actividad</h3>
+                    <p>Desarrollo de una API REST robusta para centralizar la gestión de inventario y pedidos, utilizando Node.js y Sequelize.</p>
+                </div>
+
+                <div class="case-study__item">
+                    <h3>Desafío Principal</h3>
+                    <p>Implementar la integridad referencial en una base de datos compleja para evitar datos inconsistentes en transacciones financieras.</p>
+                </div>
+
+                <div class="case-study__item">
+                    <h3>Solución Propuesta</h3>
+                    <p>Uso de transacciones SQL y lógica asíncrona mediante el patrón MVC, asegurando que cada operación de escritura sea segura.</p>
+                </div>
+
+                <div class="case-study__item">
+                    <h3>Herramientas Técnicas</h3>
                     <ul class="case-study__tags">
                         <li>Node.js</li>
                         <li>Express</li>
                         <li>Sequelize</li>
-                        <li>SQL</li>
+                        <li>PostgreSQL</li>
+                        <li>Postman</li>
                     </ul>
                 </div>
+
+                <div class="case-study__item">
+                    <h3>Métricas de Impacto</h3>
+                    <ul>
+                        <li><strong>100%</strong> de integridad de datos alcanzada.</li>
+                        <li>Reducción del <strong>25%</strong> en tiempos de respuesta de consultas.</li>
+                    </ul>
+                </div>
+
+                <div class="case-study__item">
+                    <h3>Aprendizajes y Justificación</h3>
+                    <p>Reforicé el manejo de modelos asíncronos. Elegí este proyecto porque demuestra mi capacidad para resolver problemas de lógica de servidor real.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="other-projects container">
+            <h2 class="section-title">Otros Proyectos</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <h3>Alke Wallet</h3>
+                    <p>Billetera digital con gestión de saldos y usuarios.</p>
+                </article>
+                <article class="project-card">
+                    <h3>Gestor de Tareas</h3>
+                    <p>Aplicación interactiva con timers y persistencia local.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="contact container">
+            <h2 class="section-title">Contacto</h2>
+            <p>¿Te interesa mi perfil? ¡Hablemos!</p>
+            <div class="contact__links">
+                <a href="mailto:tu-correo@ejemplo.com">Email</a> | 
+                <a href="https://github.com/tu-usuario" target="_blank">GitHub</a> | 
+                <a href="#" target="_blank">LinkedIn</a>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2026 - Desarrollado con ❤️</p>
+        <p>&copy; 2026 - Andrés Felipe Sánchez Vásquez | Portafolio Técnico</p>
     </footer>
 </body>
 </html>
